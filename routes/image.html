@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+      input[type="file"] {
+    display: none;
+    }
+    .custom-file-upload {
+        border: 1px solid #ccc;
+        display: inline-block;
+        padding: 6px 12px;
+        cursor: pointer;
+    }
+    .sty{
+      left:200px;
+      top:50%;
+    }
+    </style>
+  </head>
+<body>
+<div class="container">
+<h1>U P L O A D&nbsp&nbsp F I L E</h1>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+  <label for="file-upload" class="custom-file-upload"style="width:500px;">
+    <span class="glyphicon glyphicon-download-alt"></span> Upload File
+</label>
+<input id="file-upload" type="file" name="myfile">
+  <input class="btn btn-success"type="submit">
+</form>
+</div>
+</body>
+</html>
