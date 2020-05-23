@@ -6,8 +6,6 @@ var logger = require('morgan');
 var uploadRouter = require('./routes/upload');
 var mongodb=require('mongodb');
 var mongoose=require('mongoose');
-var session=require('express-session');
-var file=require('session-file-store')(session);
 var app = express();
 const url="mongodb://localhost:27017/hello";
 const connect=mongoose.connect(url);
@@ -22,13 +20,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session({
-    name:'session-id',
-    secret:'12345-67890-09876-54321',
-    resave:false,
-    saveUninitialized:false,
-    store:new file()
-}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', uploadRouter);
